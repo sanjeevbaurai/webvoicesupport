@@ -13,7 +13,6 @@ body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
     color: #212529;
     text-align: left;
     background-color: #fff;
@@ -147,9 +146,49 @@ body {
 .hide{
     display: none;
 }
+
+.show{
+    display: block;
+}
+.touchSection{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: #009C9C !important;
+}
+.touch-animation{
+    width:62px;
+    height:62px;
+    margin: 12% auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.cancel{
+    border-top: solid 1px #ccc;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;color: #000;
+    color: #007bff;
+}
+.touch-animation span {
+    padding: 10px;
+    font-weight: bold;
+}
+.firstSection{
+    background-color: #f8f8f8 !important;
+    width: 270px;
+    height: 185px;
+    margin: 80% auto;
+    border-radius: 14px;
+    backdrop-filter: blur(27.1828px);
+    display: flex;
+    flex-direction: column;
+}
 .userInfo{
     height: 150px;
-    background-color: #CE7790 !important;
+    background-color: #009C9C !important;
 }
 .userSection{
     color: #fff;
@@ -163,7 +202,6 @@ body {
 .system-voice-animation{
     text-align: center;
     margin: 0 auto;
-    display: none;
 }
 .system-voice-animation img{
      height: 40px;
@@ -180,20 +218,20 @@ body {
     width:70px;
 }
 .defaultImg{
-    background-image:url("../img/mic.svg");
+    background-image:url("../img/mic_unselected.png");
 }
 .selectedImg{
-    background-image:url("../img/mic-select.svg");
+    background-image:url("../img/mic-select.png");
 }
 #chatArea{
-    max-height: 430px;
+    max-height: 250px;
     overflow: scroll;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 .serverChatBot{
     margin: 20px 60px;
     position: relative;
-    background: #CE7790;
+    background: #009C9C;
     border-radius: .4em;
     padding: 20px;
     width: 80%;
@@ -216,7 +254,7 @@ body {
     width: 0;
     height: 0;
     border: 16px solid transparent;
-    border-top-color: #CE7790;
+    border-top-color: #009C9C;
     border-bottom: 0;
     border-right: 0;
     margin-right: 0px;
@@ -225,7 +263,7 @@ body {
 .userChatBot{
     margin: 20px;
     position: relative;
-    background: #ddd;
+    background: #f8f8f8;
     border-radius: .4em;
     padding: 20px;
     width: 60%;
@@ -238,7 +276,7 @@ body {
     width: 0;
     height: 0;
     border: 16px solid transparent;
-    border-top-color: #ddd;
+    border-top-color: #f8f8f8;
     border-bottom: 0;
     border-left: 0;
     margin-left: -12px;
@@ -260,4 +298,9 @@ body {
     text-align: center;
     font-size: 16px;
     line-height: 22px;
+}
+#helptext {
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px
 }
