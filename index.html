@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Order</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="../../assets/css/speed-gauge.css" type="text/css" />
+    </head>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script></script>
+    <body>
+        <!-- Gradients for the gauges -->
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="visually-hidden">
+            <defs>
+                <linearGradient id="arc-download" x1="100%" x2="0%" y1="37.047%" y2="62.953%">
+                    <stop offset="0%" stop-color="#6400AA"></stop>
+                    <stop offset="100%" stop-color="#AC70E8"></stop>
+                </linearGradient>
+                <linearGradient id="arc-upload" x1="100%" x2="0%" y1="37.116%" y2="62.884%">
+                    <stop offset="0%" stop-color="#E60050"></stop>
+                    <stop offset="100%" stop-color="#E870C5"></stop>
+                </linearGradient>
+                <linearGradient id="arc-loading" x1="100%" x2="0%" y1="37.116%" y2="62.884%">
+                    <stop offset="0%" stop-color="#ccc"></stop>
+                    <stop offset="100%" stop-color="#eee"></stop>
+                </linearGradient>
+            </defs>
+        </svg>
+        <div id="bt-navbar"></div>
+        <div class="hide" style="height: 80px; background-color: #6400aa !important;">
+            <div class="row col-split">
+                <!-- <img style="margin-top: 15px; padding-left: 20px;" src="../../assets/img/BT_mark_4col_rev_80x46.png" alt="BT logo" /> -->
+            </div>
+        </div>
+        <div class="container">
+        <div class="userInfo">
+            <div class="row col-split">
+                <div class="userSection">
+                    <h2><b>Welcome Geoff</b></h2>
+                    <p>How can we help you today</p>
+                    <div class="system-voice-animation">
+                    <img src="assets/img/support.gif"> </div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="startChatBtn">Start </button>
+        <div id="chatArea"></div>
+        <div class="mic">
+            <div class="row col-split">
+                <div class="micImage defaultImg" id="voiceRecordBtn">
+                </div>
+            </div>
+        </div>
+       
+        <div class="row col-split">
+            <div class="footer">
+            <div id="setting" class="footer-section">
+                <img src="assets/img/setting.svg">
+                <span class="footer-span">Setting</span>
+            </div>
+            <div id="chats" class="footer-section">
+                <img src="assets/img/setting.svg">
+                <span class="footer-span">Chats</span>
+            </div>
+            <div id="myAccount" class="footer-section">
+                <img src="assets/img/profile.svg">
+                <span class="footer-span">My account</span>
+            </div>
+        </div>
+        </div>
+    </div>
+        <div class="container">
+        
+
+            <div class="row">
+                <div class="module-1 clearfix">
+                    <div class="setting hide">
+                        <p>Enter some text in the input below and press return or the "play" button to hear it. change voices using the dropdown menu.</p>
+                        <input type="text" id="voiceTestInput" />
+                        <div>
+                            <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate" />
+                            <div id="rate-value">1</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div>
+                            <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch" />
+                            <div id="pitch-value">1</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <select id="voiceSelect"></select>
+                        <div class="controls">
+                            <button id="voiceTestBtn">Test</button>
+                        </div>
+                    </div>
+
+                    <div class="hide">
+                        <p>Enter Your name</p>
+                        <input type="text" class="txt" id="userName" />
+                        <button id="startChatBtn">Start Chat</button>
+                        <div>
+                            <p id="phrase">Phrase...</p>
+                            <p id="result">Right or wrong?</p>
+                            <p id="diagnosticPara"></p>
+                            <input type="text" id="playBackTxt" />
+                        </div>
+                        <!-- <div id="chatArea"></div> -->
+                        <button id="voiceRecordBtn">Ask Me</button>
+
+                        <div id="details">
+
+                           <div id ="broadband">
+                              Fibre 1 and Fibre 2
+                           </div>
+
+                        </div>
+                    
+                </div>
+            </div>
+
+            <div class="row col-split margin-top0-override margin-bottom0-override hide">
+                <div class="none bg-color clearfix">
+                    <div class="module-1 clearfix">
+                        <div class="padding-bottom0-override padding-left padding-right">
+                            <span class="">
+                                <div>
+                                    <div class="text parbase section">
+                                        <div class="padding-top20-30 pText">
+                                            <h1><b>Confirm your broadband order</b></h1>
+                                        </div>
+                                        <div class="none padding-top0-10 padding-left0-override padding-bottom0-10">
+                                            <div class="pText"><span class="s4"> It won&rsquo;t take long to check the details.</span></div>
+                                            <div class="pText" style="padding-top: 20px;">
+                                                <!-- <button id="orderCTABtn" class="btn primary-purchase" onclick="">Order Now</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <hr class="divider padding-top30 padding-bottom30" />
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-split margin-top0-override margin-bottom0-override hide">
+                <div class="none bg-color clearfix">
+                    <div class="module-1 clearfix">
+                        <div class="padding-bottom0-override padding-left padding-right">
+                            <span class="">
+                                <div>
+                                    <div class="text parbase section padding-bottom20-override pText">
+                                        <span class="s2"><b>Here are the changes to your broadband </b></span>
+                                    </div>
+                                    <div class="section padding-top0-20">
+                                        <div class="row col-split margin-top0-override margin-bottom0-override">
+                                            <div class="none bg-color clearfix">
+                                                <div class="temp-row3">
+                                                    <div class="module-2 clearfix no-padding-all customModuleWidth">
+                                                        <div class="padding-bottom0-override padding-top0-override padding-left padding-right">
+                                                            <span class="">
+                                                                <div class="row col-split margin-top0-override margin-bottom20-30">
+                                                                    <div class="bg-color clearfix paddingRigthSVG">
+                                                                        <div class="module-1 clearfix topBorderRadius no-padding-all customBorderStyle" style="padding: 0px;">
+                                                                            <div style="margin: -1px;">
+                                                                                <div class="light-grey padding-bottom20-override padding-top20-override topBorderRadius">
+                                                                                    <p style="text-align: center;">
+                                                                                        <span class="s3">
+                                                                                            <b>Your current broadband</b>
+                                                                                        </span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <span class="">
+                                                                                    <div>
+                                                                                        <div class="">
+                                                                                            <div class="padding-top20-override padding-bottom20-override pext" style="text-align: center;">
+                                                                                                <span class="s3">BROADBAND UNLIMITED</span>
+                                                                                                <div class="chkSpeedText" style="position: relative; top: 20px;"><b>Checking your speeds...</b></div>
+                                                                                            </div>
+                                                                                            <div class="module-2 clearfix no-padding-all">
+                                                                                                <div id="" class="speed-gauge-mainDiv">
+                                                                                                    <div class="speed-gauge" id="currDownloadSVGDiv">
+                                                                                                        <svg id="currDownloadSVG" xmlns="http://www.w3.org/2000/svg" width="175" height="93" viewBox="0 0 175 93" aria-hidden="true">
+                                                                                                            <!-- Background path -->
+                                                                                                            <path
+                                                                                                                class=""
+                                                                                                                bgpath="Y"
+                                                                                                                fill="none"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                stroke="#DDD"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-width="8"
+                                                                                                                d="M4 89C4 42.056 41.384 4 87.5 4S171 42.056 171 89"
+                                                                                                            ></path>
+                                                                                                            <!-- Animated path -->
+                                                                                                            <path
+                                                                                                                id="downloadSpeed"
+                                                                                                                class="speed-gauge__path"
+                                                                                                                fill="none"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                stroke="url(#arc-download)"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-width="8"
+                                                                                                                d="M5 90C5 43.056 42.384 5 88.5 5S172 43.056 172 90"
+                                                                                                                transform="translate(-1 -1)"
+                                                                                                            ></path>
+                                                                                                        </svg>
+                                                                                                    </div>
+                                                                                                    <div id="currBB_DS_div" style="text-align: center;" class="s3 bold marginSpeedTop tobeRemovedCSSForInput">&nbsp;</div>
+                                                                                                    <div class="padding-top20-override padding-bottom20-override" style="text-align: center;">Estimated download speed</div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="module-2 clearfix no-padding-all">
+                                                                                                <div id="" class="speed-gauge-mainDiv">
+                                                                                                    <div class="speed-gauge" id="currUploadSVGDiv">
+                                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="175" height="93" viewBox="0 0 175 93" aria-hidden="true">
+                                                                                                            <!-- Background path -->
+                                                                                                            <path
+                                                                                                                class=""
+                                                                                                                bgpath="Y"
+                                                                                                                fill="none"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                stroke="#DDD"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-width="8"
+                                                                                                                d="M4 89C4 42.056 41.384 4 87.5 4S171 42.056 171 89"
+                                                                                                            ></path>
+                                                                                                            <!-- Animated path -->
+                                                                                                            <path
+                                                                                                                id="uploadSpeed"
+                                                                                                                class="speed-gauge__path"
+                                                                                                                fill="none"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                stroke="url(#arc-upload)"
+                                                                                                                stroke-linecap="round"
+                                                                                                                stroke-width="8"
+                                                                                                                d="M5 90C5 43.056 42.384 5 88.5 5S172 43.056 172 90"
+                                                                                                                transform="translate(-1 -1)"
+                                                                                                            ></path>
+                                                                                                        </svg>
+                                                                                                    </div>
+                                                                                                    <div id="currBB_US_div" style="text-align: center;" class="s3 bold marginSpeedTop tobeRemovedCSSForInput">&nbsp;</div>
+                                                                                                    <div class="padding-top20-override padding-bottom20-override" style="text-align: center;">Estimated Upload Speed</div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="module-2 clearfix no-padding-all customModuleWidth">
+                                                        <div class="padding-bottom0-override padding-top0-override padding-left padding-right">
+                                                            <div class="row col-split margin-top0-override margin-bottom20-30">
+                                                                <div class="bg-color clearfix paddingLeftSVG">
+                                                                    <div class="module-1 clearfix topBorderRadius customBorderStyle" style="padding: 0px;">
+                                                                        <div style="margin: -1px;">
+                                                                            <div class="padding-bottom20-override padding-top20-override topBorderRadius" style="background-color: #ffdc00;">
+                                                                                <p style="text-align: center;">
+                                                                                    <span class="s3">
+                                                                                        <b>Your new broadband</b>
+                                                                                    </span>
+                                                                                </p>
+                                                                            </div>
+                                                                            <span class="">
+                                                                                <div>
+                                                                                    <div class="">
+                                                                                        <div class="padding-top20-override padding-bottom20-override" style="text-align: center;">
+                                                                                            <span class="s3">FIBRE UNLIMITED</span>
+                                                                                            <div class="chkSpeedText" style="position: relative; top: 20px;"><b>Checking your speeds...</b></div>
+                                                                                        </div>
+                                                                                        <div class="module-2 clearfix no-padding-all">
+                                                                                            <div id="" class="speed-gauge-mainDiv">
+                                                                                                <div class="speed-gauge" id="newDownloadSVGDiv">
+                                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="175" height="93" viewBox="0 0 175 93" aria-hidden="true">
+                                                                                                        <!-- Background path -->
+                                                                                                        <path
+                                                                                                            class=""
+                                                                                                            bgpath="Y"
+                                                                                                            fill="none"
+                                                                                                            fill-rule="evenodd"
+                                                                                                            stroke="#DDD"
+                                                                                                            stroke-linecap="round"
+                                                                                                            stroke-width="8"
+                                                                                                            d="M4 89C4 42.056 41.384 4 87.5 4S171 42.056 171 89"
+                                                                                                        ></path>
+                                                                                                        <!-- Animated path -->
+                                                                                                        <path
+                                                                                                            id="newDownloadSpeed"
+                                                                                                            class="speed-gauge__path"
+                                                                                                            fill="none"
+                                                                                                            fill-rule="evenodd"
+                                                                                                            stroke="url(#arc-download)"
+                                                                                                            stroke-linecap="round"
+                                                                                                            stroke-width="8"
+                                                                                                            d="M5 90C5 43.056 42.384 5 88.5 5S172 43.056 172 90"
+                                                                                                            transform="translate(-1 -1)"
+                                                                                                        ></path>
+                                                                                                    </svg>
+                                                                                                </div>
+                                                                                                <div id="newBB_DS_div" style="text-align: center;" class="s3 bold marginSpeedTop tobeRemovedCSSForInput">&nbsp;</div>
+                                                                                                <div class="padding-top20-override padding-bottom20-override" style="text-align: center;">Estimated Download Speed</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="module-2 clearfix no-padding-all">
+                                                                                            <div id="" class="speed-gauge-mainDiv">
+                                                                                                <div class="speed-gauge" id="newUploadSVGDiv">
+                                                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="175" height="93" viewBox="0 0 175 93" aria-hidden="true">
+                                                                                                        <!-- Background path -->
+                                                                                                        <path
+                                                                                                            class=""
+                                                                                                            bgpath="Y"
+                                                                                                            fill="none"
+                                                                                                            fill-rule="evenodd"
+                                                                                                            stroke="#DDD"
+                                                                                                            stroke-linecap="round"
+                                                                                                            stroke-width="8"
+                                                                                                            d="M4 89C4 42.056 41.384 4 87.5 4S171 42.056 171 89"
+                                                                                                        ></path>
+                                                                                                        <!-- Animated path -->
+                                                                                                        <path
+                                                                                                            id="newUploadSpeed"
+                                                                                                            class="speed-gauge__path"
+                                                                                                            fill="none"
+                                                                                                            fill-rule="evenodd"
+                                                                                                            stroke="url(#arc-upload)"
+                                                                                                            stroke-linecap="round"
+                                                                                                            stroke-width="8"
+                                                                                                            d="M5 90C5 43.056 42.384 5 88.5 5S172 43.056 172 90"
+                                                                                                            transform="translate(-1 -1)"
+                                                                                                        ></path>
+                                                                                                    </svg>
+                                                                                                </div>
+                                                                                                <div id="newBB_US_div" style="text-align: center;" class="s3 bold marginSpeedTop tobeRemovedCSSForInput">&nbsp;</div>
+                                                                                                <div class="padding-top20-override padding-bottom20-override" style="text-align: center;">Estimated Upload Speed</div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pText">
+                                    <span class="points"><b>All your other product features will stay the same </b></span>
+                                </div>
+
+                                <div class="">
+                                    <hr class="divider padding-top30 padding-bottom30" />
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          
+        <script src="../../assets/js/main.js"></script>
+    </body>
+</html>
